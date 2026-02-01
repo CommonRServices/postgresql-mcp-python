@@ -7,7 +7,7 @@ from tools.write_query import execute_write
 
 
 mcp = FastMCP(
-    "AgentsDbServer", stateless_http=True, json_response=True, lifespan=lifespan
+    "AgentsDbServer", stateless_http=True, json_response=True, lifespan=lifespan, host="0.0.0.0", port=8000
 )
 
 
