@@ -1,0 +1,15 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: agents-db-mcp-ingress
+  namespace: agents-db-mcp 
+spec:
+  routes:
+    - match: PathPrefix(`/agents-db-mcp`) 
+      kind: Rule
+      services:
+        - name: agents-db-mcp-svc 
+          port: 8000 
+      middlewares:
+      - name: strip-agents-db-mcp-prefix
+        namespace: agents-db-mcp

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: agents-db-mcp-svc
+  namespace: agents-db-mcp
+spec:
+  selector:
+    app: agents-db-mcp
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: ClusterIP
