@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: agents-db-mcp
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: agents-db-mcp
-          image: ghcr.io/commonrservices/postgresql-mcp-python:sha256-a82054720211b60899516d0dd740a583e8d1aa9103669131f0cac7dc795cade1
+          image: ghcr.io/commonrservices/postgresql-mcp-python:main
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
